@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#loading {
+  position: absolute;
+  font-size: 1rem;
+  font-weight: bold;
+  color: blue;
+  top: 48%;
+  left: 48%;
+}

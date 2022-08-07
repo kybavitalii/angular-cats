@@ -1,0 +1,12 @@
+.cat-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 350px;
+  margin: 15px;
+}
+
+.cat-card img {
+  width: 150px;
+  height: auto;
+}
