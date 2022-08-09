@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, tap, pipe } from 'rxjs';
-import { ICat } from './models/cat';
+import { ICat } from './models/cat.model';
 import { CatsService } from './services/cats.services';
 
 @Component({
@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   // cats: ICat[] = [];
   loading: boolean = false;
   cats$: Observable<ICat[]>;
+  breed$: Observable<ICat[]>;
 
   constructor(private catsService: CatsService) {}
 
@@ -21,9 +22,5 @@ export class AppComponent implements OnInit {
     this.cats$ = this.catsService
       .getAll()
       .pipe(tap(() => (this.loading = false)));
-    // this.catsService.getAll().subscribe((cats) => {
-    //   this.cats = cats;
-    //   this.loading = false;
-    // });
   }
 }

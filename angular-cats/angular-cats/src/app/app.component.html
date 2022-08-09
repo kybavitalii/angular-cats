@@ -1,3 +1,8 @@
 <app-error-component></app-error-component>
+<app-paginator-component></app-paginator-component>
 <p id="loading" *ngIf="loading">Loading...</p>
 <app-cat *ngFor="let cat of cats$ | async; let i = index" [cat]="cat"></app-cat>
+<app-cat
+  *ngFor="let cat of breed$ | async; let i = index"
+  [cat]="cat"
+></app-cat>

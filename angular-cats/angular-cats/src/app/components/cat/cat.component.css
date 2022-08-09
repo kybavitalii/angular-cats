@@ -1,7 +1,10 @@
-.cat-card {
+.centered {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  justify-content: center;
+}
+
+.cat-card {
   max-width: 350px;
   margin: 15px;
 }
