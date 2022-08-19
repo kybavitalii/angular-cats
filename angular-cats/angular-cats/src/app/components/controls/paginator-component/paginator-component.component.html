@@ -2,20 +2,27 @@
   <mat-form-field appearance="fill">
     <mat-label>Choose a breed</mat-label>
     <mat-select>
-      <mat-option *ngFor="let cat of cats$ | async" [value]="cat.id">
+      <mat-option
+        *ngFor="let cat of responseToAPI$ | async"
+        [value]="cat.id"
+        (click)="setId(cat.id)"
+        (click)="onChange()"
+      >
         {{ cat.name }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field
+    appearance="fill"
+    (change)="setLimits(pageSize, pageEvent.pageIndex)"
+  >
     <mat-label>Page size</mat-label>
     <input matInput [(ngModel)]="pageSize" type="number" />
   </mat-form-field>
 
-  <!-- <button mat-stroked-button color="primary">Search</button> -->
-
   <mat-paginator
+    (click)="setLimits(pageSize, pageEvent.pageIndex)"
     [length]="length"
     [pageSize]="pageSize"
     [pageSizeOptions]="pageSizeOptions"
@@ -23,6 +30,7 @@
     aria-label="Select page"
   >
   </mat-paginator>
+  <!-- (pageEvent.pageIndex)="(index)" -->
 
   <!-- <div *ngIf="pageEvent">
     <h5>Page Change Event Properties</h5>

@@ -12,3 +12,15 @@
   top: 48%;
   left: 48%;
 }
+
+.example-button-row {
+  margin: 22px auto 20px auto;
+  width: 250px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.ng-star-inserted {
+  cursor: pointer;
+}

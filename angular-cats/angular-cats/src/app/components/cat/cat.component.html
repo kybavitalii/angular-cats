@@ -3,13 +3,11 @@
     <mat-card-title-group>
       <mat-card-title>{{ cat.name }}</mat-card-title>
       <mat-card-subtitle>{{ cat.temperament }}</mat-card-subtitle>
-      <img
-        mat-card-sm-image
-        [src]="cat.image && cat.image.url"
-        [alt]="cat.name"
-      />
+      <img mat-card-sm-image [src]="cat && getSrc()" [alt]="cat.name" />
     </mat-card-title-group>
     <mat-card-content>
+      {{ cat.description }}
+      <br />
       <a [href]="cat.wikipedia_url">Wiki: {{ cat.name }}</a>
     </mat-card-content>
   </mat-card>

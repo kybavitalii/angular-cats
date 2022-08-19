@@ -1,8 +1,10 @@
 <app-error-component></app-error-component>
-<app-paginator-component></app-paginator-component>
+<app-paginator-component
+  (choose)="getId()"
+  (limits)="getLimitedList()"
+></app-paginator-component>
+<!-- <div class="example-button-row">
+  <button mat-stroked-button color="primary">Search</button>
+</div> -->
 <p id="loading" *ngIf="loading">Loading...</p>
-<app-cat *ngFor="let cat of cats$ | async; let i = index" [cat]="cat"></app-cat>
-<app-cat
-  *ngFor="let cat of breed$ | async; let i = index"
-  [cat]="cat"
-></app-cat>
+<app-cat *ngFor="let item of responseToAPI$ | async" [cat]="item"></app-cat>

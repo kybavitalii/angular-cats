@@ -4,6 +4,7 @@ export interface ICat {
   temperament: string;
   alt_names: string;
   reference_image_id: string | null;
+  description: string;
   image: {
     id: string;
     url: string;
